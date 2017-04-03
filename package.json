@@ -1,0 +1,8 @@
+{
+    "name": "Projecto",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "ifc33a",
+    "contributors": [],
+    "dependencies": {}
+}
