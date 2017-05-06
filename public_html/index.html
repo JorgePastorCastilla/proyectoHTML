@@ -1,16 +1,192 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+4 pagines HTML
+1 formulari(contacte)
+1 video
+1 font externa -> google fonts
+1 font iconica -> font awesome
+1 menu
+    qualque efecte (hover)
+    imatges
+responsive
+mapa
+html sense errors de sintaxis
+utilitza HTML5
 -->
 <html>
     <head>
-        <title>Proyecto</title>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+        <title>Inicio</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{
+                box-sizing: border-box;padding: 0px;margin: 0px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            a{font-family: 'Bitter', serif;}
+
+            #menuid li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 16px;
+                text-decoration: none;
+            }
+
+
+            .menu{background-color: blue;float: left;}
+            .menu:hover{background-color: lightblue}
+
+            .menu a {font-size: 20px}
+
+            main{padding-left: 20px}
+
+            footer{background-color: lightblue}
+
+            #footerlist li a {
+                display: block;
+                text-align: left;
+                padding: 16px;
+                padding-left: 10%;
+                text-decoration: none; 
+                color: black;
+            }
+
+            [class*="col-"]{
+                display: inline-block;vertical-align: top;
+            }
+
+            @media only screen and (min-width: 851px) {
+                .col-1 {width: 8.33%;}
+                .col-2 {width: 16.66%;}
+                .col-3 {width: 25%;}
+                .col-4 {width: 33.33%;}
+                .col-5 {width: 41.66%;}
+                .col-6 {width: 50%;}
+                .col-7 {width: 58.33%;}
+                .col-8 {width: 66.66%;}
+                .col-9 {width: 75%;}
+                .col-10 {width: 83.33%;}
+                .col-11 {width: 91.66%;}
+                .col-12 {width: 100%;}
+                .video {width: 600px;height: 300px}
+            }     
+
+            @media only screen and (max-width: 850px) {
+                .col-1m {width: 8.33%;}
+                .col-2m {width: 16.66%;}
+                .col-3m {width: 25%;}
+                .col-4m {width: 33.33%;}
+                .col-5m {width: 41.66%;}
+                .col-6m {width: 50%;}
+                .col-7m {width: 58.33%;}
+                .col-8m {width: 66.66%;}
+                .col-9m {width: 75%;}
+                .col-10m {width: 83.33%;}
+                .col-11m {width: 91.66%;}
+                .col-12m {width: 100%;}
+                .video {width: 100%;}
+            }
+
+            @media only screen and (max-width: 600px) {
+                .col-1s {width: 8.33%;}
+                .col-2s {width: 16.66%;}
+                .col-3s {width: 25%;}
+                .col-4s {width: 33.33%;}
+                .col-5s {width: 41.66%;}
+                .col-6s {width: 50%;}
+                .col-7s {width: 58.33%;}
+                .col-8s {width: 66.66%;}
+                .col-9s {width: 75%;}
+                .col-10s {width: 83.33%;}
+                .col-11s {width: 91.66%;}
+                .col-12s {width: 100%;}
+                .video {width: 100%;}
+            }
+
+        </style>
     </head>
     <body>
-        <div>TODO write content</div>
+        <header>
+            <div id="menuid"  class="col-12 col-12m col-12s" style="display: inline-block;">
+                <ul class="col-12 col-12m col-12s">
+                    <li class="menu col-3 col-3m col-12s"><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a></li>
+                    <li class="menu col-3 col-3m col-12s"><a href="#news">Anime</a></li>
+                    <li  class="menu col-3 col-3m col-12s"><a href="#about">Manga</a></li>
+                    <li  class="menu col-3 col-3m col-12s"><a href="#contact"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a></li>
+                </ul></div>
+        </header>
+        <main>
+            <div class="col-12 col-12m col-12s" style=";display: inline-block;vertical-align: top"><div class="divdescripcion">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
+                --><div class="divdescripcion"><p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
+                --><div class="divdescripcion"><p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
+                --><div class="divdescripcion"><p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
+                --><div class="divdescripcion"><p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
+                --><div class="divdescripcion"><p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                        Nullam ut arcu nunc.<br>
+                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
+                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
+                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
+                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
+                        Ut vestibulum purus eu lorem egestas blandit.</p></div>
+            </div>
+        </main>
+        <footer style=" ">
+            <div class="col-4 col-4m col-4s" id="footerlist">
+                <ul>
+                    <li><a href="#facebook" target="_blank"><i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a></li>
+                    <li><a href="#twitter" target="_blank"><i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a></li>
+                    <li><a href="#steam" target="_blank"><i style=" color: #171a21" class="fa fa-steam-square fa-fw" aria-hidden="true"></i>steam</a></li>
+                    <li><a href="#youtube" target="_blank"><i style=" color: #cc181e" class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>youtube</a></li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
