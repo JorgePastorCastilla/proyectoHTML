@@ -43,15 +43,16 @@ utilitza HTML5
                 text-decoration: none;
             }
 
+            header{position: fixed;}
 
-            .menu{background-color: blue;float: left;}
-            .menu:hover{background-color: lightblue}
+            .menu{background-color: #3e87f4;float: left;}
+            .menu:hover{background-color: blue}
 
             .menu a {font-size: 20px}
 
-            main{padding-left: 20px}
+            main{padding-left: 1%}
 
-            footer{background-color: lightblue}
+            footer{background-color: lightblue;padding-left: 1%;}
 
             #footerlist li a {
                 display: block;
@@ -67,6 +68,7 @@ utilitza HTML5
             }
 
             @media only screen and (min-width: 851px) {
+                .col-0 {width: 0%}
                 .col-1 {width: 8.33%;}
                 .col-2 {width: 16.66%;}
                 .col-3 {width: 25%;}
@@ -80,9 +82,11 @@ utilitza HTML5
                 .col-11 {width: 91.66%;}
                 .col-12 {width: 100%;}
                 .video {width: 600px;height: 300px}
+                #mainid{padding-top: 56px;}
             }     
 
             @media only screen and (max-width: 850px) {
+                .col-0m {width: 0%}
                 .col-1m {width: 8.33%;}
                 .col-2m {width: 16.66%;}
                 .col-3m {width: 25%;}
@@ -96,9 +100,12 @@ utilitza HTML5
                 .col-11m {width: 91.66%;}
                 .col-12m {width: 100%;}
                 .video {width: 100%;}
+                #mainid{padding-top: 56px;}
+
             }
 
             @media only screen and (max-width: 600px) {
+                .col-0s {width: 0%}
                 .col-1s {width: 8.33%;}
                 .col-2s {width: 16.66%;}
                 .col-3s {width: 25%;}
@@ -112,23 +119,49 @@ utilitza HTML5
                 .col-11s {width: 91.66%;}
                 .col-12s {width: 100%;}
                 .video {width: 100%;}
+
+                #listaMovil li>a{
+                    background-color: #3e87f4;
+                    display: block;
+                    color: black;
+                    padding: 16px;
+                    text-decoration: none;
+                }
+                #listaMovil li>a:hover{background-color: blue;}
+                #listaMovil>li{float: left;text-align: center;}
+                #listaMovil>li>ul{display: none;}
+                #listaMovil>li:hover>ul{display: block;}
+                
             }
 
         </style>
     </head>
     <body>
-        <header>
-            <div id="menuid"  class="col-12 col-12m col-12s" style="display: inline-block;">
+        <header class="col-12 col-12m col-0s">
+            <nav id="menuid"  class="col-12 col-12m col-0s" style="display: inline-block;">
                 <ul class="col-12 col-12m col-12s">
                     <li class="menu col-3 col-3m col-12s"><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a></li>
                     <li class="menu col-3 col-3m col-12s"><a href="#news">Anime</a></li>
                     <li  class="menu col-3 col-3m col-12s"><a href="#about">Manga</a></li>
                     <li  class="menu col-3 col-3m col-12s"><a href="#contact"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a></li>
-                </ul></div>
+                </ul></nav>
         </header>
-        <main>
-            <div class="col-12 col-12m col-12s" style=";display: inline-block;vertical-align: top"><div class="divdescripcion">
-                    <p>
+        <header class="col-0 col-0m col-12s">
+            <nav id="movilNav" class="col-3s" style="display: inline-block;">
+                <ul  class="col-0 col-0m col-12s" id="listaMovil">
+                    <li><a><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a>
+                        <ul class="col-0 col-0m col-12s">
+                            <li class="menu col-0 col-0m col-12s"><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a></li>
+                            <li class="menu col-0 col-0m col-12s"><a href="#news">Anime</a></li>
+                            <li  class="menu col-0 col-0m col-12s"><a href="#about">Manga</a></li>
+                            <li  class="menu col-0 col-0m col-12s"><a href="#contact"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </li>
+                </ul></nav>
+        </header>
+        <main id="mainid" >
+            <div class="col-12 col-12m col-12s"><!--
+                --><div class="col-12 col-12m col-12s"><p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
                         Nullam ut arcu nunc.<br>
                         Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
@@ -136,39 +169,7 @@ utilitza HTML5
                         Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
                         Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
                         Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="divdescripcion"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="divdescripcion"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="divdescripcion"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="divdescripcion"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="divdescripcion"><p>
+                --><div class="col-12 col-12m col-12s"><p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
                         Nullam ut arcu nunc.<br>
                         Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
@@ -178,8 +179,8 @@ utilitza HTML5
                         Ut vestibulum purus eu lorem egestas blandit.</p></div>
             </div>
         </main>
-        <footer style=" ">
-            <div class="col-4 col-4m col-4s" id="footerlist">
+        <footer class="col-12 col-12m col-12s">
+            <div class="col-1 col-4m col-4s" id="footerlist">
                 <ul>
                     <li><a href="#facebook" target="_blank"><i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a></li>
                     <li><a href="#twitter" target="_blank"><i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a></li>
