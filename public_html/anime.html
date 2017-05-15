@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<!--
-4 pagines HTML
-1 formulari(contacte)
-1 video
-1 font externa -> google fonts
-1 font iconica -> font awesome
-1 menu
-    qualque efecte (hover)
-    imatges
-responsive
-mapa
-html sense errors de sintaxis
-utilitza HTML5
--->
 <html>
     <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Yrsa" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
         <title>Anime</title>
         <meta charset="UTF-8">
@@ -50,8 +38,6 @@ utilitza HTML5
 
             .menu a {font-size: 20px}
 
-            main{padding-left: 1%}
-
             footer{background-color: lightblue;padding-left: 1%;}
 
             #footerlist li a {
@@ -66,6 +52,12 @@ utilitza HTML5
             [class*="col-"]{
                 display: inline-block;vertical-align: top;
             }
+
+            .articulo{ padding-left: 2%; padding-top: 20px;padding-bottom: 10px;border-bottom: solid 2px;}
+            .articulo-imagen{width: 80px;height: 80px;display: inline-block;}
+            .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
+            .articulo-titulo{ font-weight: bold; font-size: 18px; font-family: 'Rubik', sans-serif;}
+            .articulo-texto{font-family:  'Noticia Text', verdana; font-size: 15px;}
 
             @media only screen and (min-width: 851px) {
                 .col-0 {width: 0%}
@@ -131,61 +123,232 @@ utilitza HTML5
                 #listaMovil>li{float: left;text-align: center;}
                 #listaMovil>li>ul{display: none;}
                 #listaMovil>li:hover>ul{display: block;}
-                
+
             }
 
         </style>
     </head>
     <body>
         <header class="col-12 col-12m col-0s">
-            <nav id="menuid"  class="col-12 col-12m col-0s" style="display: inline-block;">
+            <nav id="menuid" class="col-12 col-12m col-0s" style="display: inline-block;">
                 <ul class="col-12 col-12m col-12s">
-                    <li class="menu col-3 col-3m col-12s"><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a></li>
-                    <li class="menu col-3 col-3m col-12s"><a href="anime.html">Anime</a></li>
-                    <li  class="menu col-3 col-3m col-12s"><a href="manga.html">Manga</a></li>
-                    <li  class="menu col-3 col-3m col-12s"><a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a></li>
-                </ul></nav>
+                    <li class="menu col-3 col-3m col-12s">
+                        <a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a>
+                    </li>
+                    <li class="menu col-3 col-3m col-12s">
+                        <a href="anime.html">Anime</a>
+                    </li>
+                    <li class="menu col-3 col-3m col-12s">
+                        <a href="noticias.html">Noticias</a>
+                    </li>
+                    <li class="menu col-3 col-3m col-12s">
+                        <a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <header class="col-0 col-0m col-12s">
             <nav id="movilNav" class="col-3s" style="display: inline-block;">
-                <ul  class="col-0 col-0m col-12s" id="listaMovil">
-                    <li><a><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a>
+                <ul class="col-0 col-0m col-12s" id="listaMovil">
+                    <li>
+                        <a><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a>
                         <ul class="col-0 col-0m col-12s">
-                            <li class="menu col-0 col-0m col-12s"><a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a></li>
-                            <li class="menu col-0 col-0m col-12s"><a href="anime.html">Anime</a></li>
-                            <li  class="menu col-0 col-0m col-12s"><a href="manga.html">Manga</a></li>
-                            <li  class="menu col-0 col-0m col-12s"><a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a></li>
+                            <li class="menu col-0 col-0m col-12s">
+                                <a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a>
+                            </li>
+                            <li class="menu col-0 col-0m col-12s">
+                                <a href="anime.html">Anime</a>
+                            </li>
+                            <li class="menu col-0 col-0m col-12s">
+                                <a href="noticias.html">Noticias</a>
+                            </li>
+                            <li class="menu col-0 col-0m col-12s">
+                                <a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a>
+                            </li>
                         </ul>
                     </li>
-                </ul></nav>
+                </ul>
+            </nav>
         </header>
-        <main id="mainid" >
-            <div class="col-12 col-12m col-12s"><!--
-                --><div class="col-12 col-12m col-12s"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="col-12 col-12m col-12s"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div>
+        <main id="mainid" class="col-12 col-12m col-12s">
+            <div style="background-color: red;">
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2659.jpg" alt="Little Witch Academia (TV) 19"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Little Witch Academia (TV) 19</p>
+                        <div class="articulo-texto">Episodio 19 de Little Witch Academia (TV)</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2694.jpg" alt="Souryo to Majiwaru Shikiyoku no Yoru ni... 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Souryo to Majiwaru Shikiyoku no Yoru ni... 7</p>
+                        <div class="articulo-texto">Episodio 7 de Souryo to Majiwaru Shikiyoku no Yoru ni...</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2695.jpg" alt="Sekai no Yami Zukan 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Sekai no Yami Zukan 7</p>
+                        <div class="articulo-texto">Episodio 7 de Sekai no Yami Zukan</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2692.jpg" alt="Tsugumomo 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Tsugumomo 7</p>
+                        <div class="articulo-texto">Episodio 7 de Tsugumomo</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2693.jpg" alt="Alice to Zouroku 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Alice to Zouroku 6</p>
+                        <div class="articulo-texto">Episodio 6 de Alice to Zouroku</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2722.jpg" alt="Uchouten Kazoku 2 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Uchouten Kazoku 2 6</p>
+                        <div class="articulo-texto">Episodio 6 de Uchouten Kazoku 2</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/7.jpg" alt="One Piece 788"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">One Piece 788</p>
+                        <div class="articulo-texto">Episodio 788 de One Piece</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2096.jpg" alt="Dragon Ball Super 90"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Dragon Ball Super 90</p>
+                        <div class="articulo-texto">Episodio 90 de Dragon Ball Super</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2553.jpg" alt="Tiger Mask W 31"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Tiger Mask W 31</p>
+                        <div class="articulo-texto">Episodio 31 de Tiger Mask W</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2717.jpg" alt="Kyoukai no Rinne (TV) 3rd Season 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Kyoukai no Rinne (TV) 3rd Season 6</p>
+                        <div class="articulo-texto">Episodio 6 de Kyoukai no Rinne (TV) 3rd Season</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2721.jpg" alt="Eromanga-sensei 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Eromanga-sensei 6</p>
+                        <div class="articulo-texto">Episodio 6 de Eromanga-sensei</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2720.jpg" alt="Re:Creators 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Re:Creators 6</p>
+                        <div class="articulo-texto">Episodio 6 de Re:Creators</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2691.jpg" alt="Granblue Fantasy The Animation TV 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Granblue Fantasy The Animation TV 7</p>
+                        <div class="articulo-texto">Episodio 7 de Granblue Fantasy The Animation TV</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2690.jpg" alt="Shingeki no Kyojin Season 2 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Shingeki no Kyojin Season 2 7</p>
+                        <div class="articulo-texto">Episodio 7 de Shingeki no Kyojin Season 2</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2689.jpg" alt="Gin no Guardian 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Gin no Guardian 7</p>
+                        <div class="articulo-texto">Episodio 7 de Gin no Guardian</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2688.jpg" alt="Boku no Hero Academia 2nd Season 7"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Boku no Hero Academia 2nd Season 7</p>
+                        <div class="articulo-texto">Episodio 7 de Boku no Hero Academia 2nd Season</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2719.jpg" alt="Shingeki no Bahamut: Virgin Soul 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Shingeki no Bahamut: Virgin Soul 6</p>
+                        <div class="articulo-texto">Episodio 6 de Shingeki no Bahamut: Virgin Soul</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2711.jpg" alt="Kabukibu! 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Kabukibu! 6</p>
+                        <div class="articulo-texto">Episodio 6 de Kabukibu!</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2732.jpg" alt="Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria 5"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria 5</p>
+                        <div class="articulo-texto">Episodio 5 de Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria</div>
+                    </div>
+                </div>
+                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
+                    <div style=" display: inline-block;">
+                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2716.jpg" alt="Nobunaga no Shinobi: Ise Kanegasaki-hen 6"></div>
+                    <div class="articulo-caja col-6">
+                        <p class="articulo-titulo">Nobunaga no Shinobi: Ise Kanegasaki-hen 6</p>
+                        <div class="articulo-texto">Episodio 6 de Nobunaga no Shinobi: Ise Kanegasaki-hen</div>
+                    </div>
+                </div>
             </div>
         </main>
         <footer class="col-12 col-12m col-12s">
             <div class="col-1 col-4m col-4s" id="footerlist">
                 <ul>
-                    <li><a href="#facebook" target="_blank"><i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a></li>
-                    <li><a href="#twitter" target="_blank"><i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a></li>
-                    <li><a href="#steam" target="_blank"><i style=" color: #171a21" class="fa fa-steam-square fa-fw" aria-hidden="true"></i>steam</a></li>
-                    <li><a href="#youtube" target="_blank"><i style=" color: #cc181e" class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>youtube</a></li>
+                    <li>
+                        <a href="#facebook" target="_blank"><i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a>
+                    </li>
+                    <li>
+                        <a href="#twitter" target="_blank"><i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a>
+                    </li>
+                    <li>
+                        <a href="#steam" target="_blank"><i style=" color: #171a21" class="fa fa-steam-square fa-fw" aria-hidden="true"></i>steam</a>
+                    </li>
+                    <li>
+                        <a href="#youtube" target="_blank"><i style=" color: #cc181e" class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>youtube</a>
+                    </li>
                 </ul>
             </div>
         </footer>
