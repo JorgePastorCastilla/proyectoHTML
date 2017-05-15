@@ -1,26 +1,14 @@
 <!DOCTYPE html>
-<!--
-4 pagines HTML
-1 formulari(contacte)
-1 video
-1 font externa -> google fonts
-1 font iconica -> font awesome
-1 menu
-    qualque efecte (hover)
-    imatges
-responsive
-mapa
-html sense errors de sintaxis
-utilitza HTML5
--->
 <html>
     <head>
-        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Yrsa" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"/>
         <title>Manga</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <style>
             *{
                 box-sizing: border-box;padding: 0px;margin: 0px;
@@ -50,8 +38,6 @@ utilitza HTML5
 
             .menu a {font-size: 20px}
 
-            main{padding-left: 1%}
-
             footer{background-color: lightblue;padding-left: 1%;}
 
             #footerlist li a {
@@ -66,6 +52,12 @@ utilitza HTML5
             [class*="col-"]{
                 display: inline-block;vertical-align: top;
             }
+
+            .articulo{ padding-left: 2%; padding-top: 20px;border-top: solid 1px;}
+            .articulo-imagen{width: 110px;height: 156px;display: inline-block;}
+            .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
+            .articulo-titulo{ font-weight: bold; font-size: 18px; font-family: 'Rubik', sans-serif;}
+            .articulo-texto{font-family:  'Noticia Text', verdana; font-size: 15px;}
 
             @media only screen and (min-width: 851px) {
                 .col-0 {width: 0%}
@@ -131,7 +123,7 @@ utilitza HTML5
                 #listaMovil>li{float: left;text-align: center;}
                 #listaMovil>li>ul{display: none;}
                 #listaMovil>li:hover>ul{display: block;}
-                
+
             }
 
         </style>
@@ -159,25 +151,16 @@ utilitza HTML5
                     </li>
                 </ul></nav>
         </header>
-        <main id="mainid" >
-            <div class="col-12 col-12m col-12s"><!--
-                --><div class="col-12 col-12m col-12s"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div><!--
-                --><div class="col-12 col-12m col-12s"><p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
-                        Nullam ut arcu nunc.<br>
-                        Phasellus sapien sapien, accumsan ut ante quis, posuere ultrices massa.<br>
-                        Proin efficitur, urna ac vulputate elementum, ante enim accumsan eros, a euismod erat est nec dui.<br>
-                        Maecenas finibus pretium neque, in lacinia sapien aliquet nec.<br>
-                        Morbi felis urna, fermentum eu erat vitae, rutrum mollis lorem.<br>
-                        Ut vestibulum purus eu lorem egestas blandit.</p></div>
+        <main id="mainid" class="col-12 col-12m col-12s">
+
+            <div class="articulo col-12 col-12m col-12s">
+                <img class="articulo-imagen" src="https://myanimelist.cdn-dena.com/s/common/uploaded_files/1494578069-a25101ffa750e2a291e6e7310a7bd5f3.jpeg" alt="imagen">
+                <div class="articulo-caja">
+                    <p class="articulo-titulo">Titulo</p>
+                    <div class="articulo-texto">pues aqui va el texto</div>
+                </div>
             </div>
+            
         </main>
         <footer class="col-12 col-12m col-12s">
             <div class="col-1 col-4m col-4s" id="footerlist">

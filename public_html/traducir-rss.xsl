@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : traducir-rss.xsl
+    Created on : 12 de mayo de 2017, 16:57
+    Author     : Jordi
+    Description:
+        Purpose of transformation follows.
+-->
+
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
+    <xsl:output method="html"/>
+
+    
+    <xsl:template match="/">
+        <!DOCTYPE html>
+        <html>
+            <head>
+                <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+                <link href="https://fonts.googleapis.com/css?family=Yrsa" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet"/>
+                <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet"/>
+                <title>Manga</title>
+                <meta charset="UTF-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <style>
+                    *{
+                    box-sizing: border-box;padding: 0px;margin: 0px;
+                    }
+
+                    ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    }
+
+                    a{font-family: 'Bitter', serif;}
+
+                    #menuid li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 16px;
+                    text-decoration: none;
+                    }
+
+                    header{position: fixed;}
+
+                    .menu{background-color: #3e87f4;float: left;}
+                    .menu:hover{background-color: blue}
+
+                    .menu a {font-size: 20px}
+
+                    footer{background-color: lightblue;padding-left: 1%;}
+
+                    #footerlist li a {
+                    display: block;
+                    text-align: left;
+                    padding: 16px;
+                    padding-left: 10%;
+                    text-decoration: none; 
+                    color: black;
+                    }
+
+                    [class*="col-"]{
+                    display: inline-block;vertical-align: top;
+                    }
+
+                    .articulo{ padding-left: 2%; padding-top: 20px;border-top: solid 1px;}
+                    .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
+                    .articulo-titulo{ font-weight: bold; font-size: 18px; font-family: 'Rubik', sans-serif;}
+                    .articulo-texto{font-family:  'Noticia Text', verdana; font-size: 15px;}
+
+                    @media only screen and (min-width: 851px) {
+                    .col-0 {width: 0%}
+                    .col-1 {width: 8.33%;}
+                    .col-2 {width: 16.66%;}
+                    .col-3 {width: 25%;}
+                    .col-4 {width: 33.33%;}
+                    .col-5 {width: 41.66%;}
+                    .col-6 {width: 50%;}
+                    .col-7 {width: 58.33%;}
+                    .col-8 {width: 66.66%;}
+                    .col-9 {width: 75%;}
+                    .col-10 {width: 83.33%;}
+                    .col-11 {width: 91.66%;}
+                    .col-12 {width: 100%;}
+                    .video {width: 600px;height: 300px}
+                    #mainid{padding-top: 56px;}
+                    }     
+
+                    @media only screen and (max-width: 850px) {
+                    .col-0m {width: 0%}
+                    .col-1m {width: 8.33%;}
+                    .col-2m {width: 16.66%;}
+                    .col-3m {width: 25%;}
+                    .col-4m {width: 33.33%;}
+                    .col-5m {width: 41.66%;}
+                    .col-6m {width: 50%;}
+                    .col-7m {width: 58.33%;}
+                    .col-8m {width: 66.66%;}
+                    .col-9m {width: 75%;}
+                    .col-10m {width: 83.33%;}
+                    .col-11m {width: 91.66%;}
+                    .col-12m {width: 100%;}
+                    .video {width: 100%;}
+                    #mainid{padding-top: 56px;}
+
+                    }
+
+                    @media only screen and (max-width: 600px) {
+                    .col-0s {width: 0%}
+                    .col-1s {width: 8.33%;}
+                    .col-2s {width: 16.66%;}
+                    .col-3s {width: 25%;}
+                    .col-4s {width: 33.33%;}
+                    .col-5s {width: 41.66%;}
+                    .col-6s {width: 50%;}
+                    .col-7s {width: 58.33%;}
+                    .col-8s {width: 66.66%;}
+                    .col-9s {width: 75%;}
+                    .col-10s {width: 83.33%;}
+                    .col-11s {width: 91.66%;}
+                    .col-12s {width: 100%;}
+                    .video {width: 100%;}
+
+                    #listaMovil li>a{
+                    background-color: #3e87f4;
+                    display: block;
+                    color: black;
+                    padding: 16px;
+                    text-decoration: none;
+                    }
+                    #listaMovil li>a:hover{background-color: blue;}
+                    #listaMovil>li{float: left;text-align: center;}
+                    #listaMovil>li>ul{display: none;}
+                    #listaMovil>li:hover>ul{display: block;}
+
+                    }
+
+                </style>
+            </head>
+            <body>
+                <header class="col-12 col-12m col-0s">
+                    <nav id="menuid"  class="col-12 col-12m col-0s" style="display: inline-block;">
+                        <ul class="col-12 col-12m col-12s">
+                            <li class="menu col-3 col-3m col-12s">
+                                <a href="index.html">
+                                    <i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a>
+                            </li>
+                            <li class="menu col-3 col-3m col-12s">
+                                <a href="anime.html">Anime</a>
+                            </li>
+                            <li  class="menu col-3 col-3m col-12s">
+                                <a href="manga.html">Manga</a>
+                            </li>
+                            <li  class="menu col-3 col-3m col-12s">
+                                <a href="contacto.html">
+                                    <i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <header class="col-0 col-0m col-12s">
+                    <nav id="movilNav" class="col-3s" style="display: inline-block;">
+                        <ul  class="col-0 col-0m col-12s" id="listaMovil">
+                            <li>
+                                <a>
+                                    <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+                                </a>
+                                <ul class="col-0 col-0m col-12s">
+                                    <li class="menu col-0 col-0m col-12s">
+                                        <a href="index.html">
+                                            <i class="fa fa-home fa-fw" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                    <li class="menu col-0 col-0m col-12s">
+                                        <a href="anime.html">Anime</a>
+                                    </li>
+                                    <li  class="menu col-0 col-0m col-12s">
+                                        <a href="manga.html">Manga</a>
+                                    </li>
+                                    <li  class="menu col-0 col-0m col-12s">
+                                        <a href="contacto.html">
+                                            <i class="fa fa-user fa-fw" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <main id="mainid" class="col-12 col-12m col-12s">
+                    <xsl:for-each select="rss/channel/item">
+                        <div class="articulo col-12 col-12m col-12s">
+                            <img class="articulo-imagen">
+                                <xsl:attribute name="src">
+                                    <xsl:value-of select="*[local-name() = 'thumbnail']"/>
+                                </xsl:attribute>
+                                <xsl:attribute name="alt">
+                                    <xsl:value-of select="title"/>
+                                </xsl:attribute>
+                            </img>
+                            
+                            <div class="articulo-caja">
+                                <p class="articulo-titulo">
+                                    <xsl:value-of select="title"/>
+                                </p>
+                                <div class="articulo-texto">
+                                    <xsl:value-of select="description"/>
+                                </div>
+                            </div>
+                        </div>
+                    </xsl:for-each>
+                </main>
+                <footer class="col-12 col-12m col-12s">
+                    <div class="col-1 col-4m col-4s" id="footerlist">
+                        <ul>
+                            <li>
+                                <a href="#facebook" target="_blank">
+                                    <i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a>
+                            </li>
+                            <li>
+                                <a href="#twitter" target="_blank">
+                                    <i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a>
+                            </li>
+                            <li>
+                                <a href="#steam" target="_blank">
+                                    <i style=" color: #171a21" class="fa fa-steam-square fa-fw" aria-hidden="true"></i>steam</a>
+                            </li>
+                            <li>
+                                <a href="#youtube" target="_blank">
+                                    <i style=" color: #cc181e" class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>youtube</a>
+                            </li>
+                        </ul>
+                    </div>
+                </footer>
+            </body>
+        </html>
+    </xsl:template>
+
+</xsl:stylesheet>
