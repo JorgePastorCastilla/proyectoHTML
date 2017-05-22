@@ -78,12 +78,12 @@
                                 </xsl:attribute>
                             </img>
                         </div>
-                        <div class="articulo-caja col-10">
+                        <div class="articulo-caja">
                             <p class="articulo-titulo">
                                 <xsl:value-of select="title"/>
                             </p>
                             <div class="articulo-texto">
-                                    <xsl:value-of select="description"/>
+                                <xsl:value-of select="description"/>
                             </div>
                             <div class="divRead col-2 col-12s">
                                 <a class="botonRead">
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                     </div>
-                    <xsl:comment/>
+
                 </xsl:for-each>
             </div>
         </main>

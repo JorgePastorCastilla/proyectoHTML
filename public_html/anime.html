@@ -9,6 +9,45 @@
         <title>Anime</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function loadXMLDoc(filename)
+            {
+                if (window.ActiveXObject)
+                {
+                    xhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                } else
+                {
+                    xhttp = new XMLHttpRequest();
+                }
+                xhttp.open("GET", filename, false);
+                try {
+                    xhttp.responseType = "msxml-document"
+                } catch (err) {
+                } // Helping IE11
+                xhttp.send("");
+                return xhttp.responseXML;
+            }
+
+            function displayResult()
+            {
+                xml = loadXMLDoc("anime-releases.xml");
+                xsl = loadXMLDoc("anime-releases.xsl");
+// code for IE
+                if (window.ActiveXObject || xhttp.responseType == "msxml-document")
+                {
+                    ex = xml.transformNode(xsl);
+                    document.getElementById("principal").innerHTML = ex;
+                }
+// code for Chrome, Firefox, Opera, etc.
+                else if (document.implementation && document.implementation.createDocument)
+                {
+                    xsltProcessor = new XSLTProcessor();
+                    xsltProcessor.importStylesheet(xsl);
+                    resultDocument = xsltProcessor.transformToFragment(xml, document);
+                    document.getElementById("principal").appendChild(resultDocument);
+                }
+            }
+        </script>
         <style>
             *{
                 box-sizing: border-box;padding: 0px;margin: 0px;
@@ -128,229 +167,7 @@
 
         </style>
     </head>
-    <body>
-        <header class="col-12 col-12m col-0s">
-            <nav id="menuid" class="col-12 col-12m col-0s" style="display: inline-block;">
-                <ul class="col-12 col-12m col-12s">
-                    <li class="menu col-3 col-3m col-12s">
-                        <a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Inicio</a>
-                    </li>
-                    <li class="menu col-3 col-3m col-12s">
-                        <a href="anime.html">Anime</a>
-                    </li>
-                    <li class="menu col-3 col-3m col-12s">
-                        <a href="noticias.html">Noticias</a>
-                    </li>
-                    <li class="menu col-3 col-3m col-12s">
-                        <a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Contacto</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <header class="col-0 col-0m col-12s">
-            <nav id="movilNav" class="col-3s" style="display: inline-block;">
-                <ul class="col-0 col-0m col-12s" id="listaMovil">
-                    <li>
-                        <a><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a>
-                        <ul class="col-0 col-0m col-12s">
-                            <li class="menu col-0 col-0m col-12s">
-                                <a href="index.html"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a>
-                            </li>
-                            <li class="menu col-0 col-0m col-12s">
-                                <a href="anime.html">Anime</a>
-                            </li>
-                            <li class="menu col-0 col-0m col-12s">
-                                <a href="noticias.html">Noticias</a>
-                            </li>
-                            <li class="menu col-0 col-0m col-12s">
-                                <a href="contacto.html"><i class="fa fa-user fa-fw" aria-hidden="true"></i></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main id="mainid" class="col-12 col-12m col-12s">
-            <div style="background-color: red;">
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2659.jpg" alt="Little Witch Academia (TV) 19"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Little Witch Academia (TV) 19</p>
-                        <div class="articulo-texto">Episodio 19 de Little Witch Academia (TV)</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2694.jpg" alt="Souryo to Majiwaru Shikiyoku no Yoru ni... 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Souryo to Majiwaru Shikiyoku no Yoru ni... 7</p>
-                        <div class="articulo-texto">Episodio 7 de Souryo to Majiwaru Shikiyoku no Yoru ni...</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2695.jpg" alt="Sekai no Yami Zukan 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Sekai no Yami Zukan 7</p>
-                        <div class="articulo-texto">Episodio 7 de Sekai no Yami Zukan</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2692.jpg" alt="Tsugumomo 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Tsugumomo 7</p>
-                        <div class="articulo-texto">Episodio 7 de Tsugumomo</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2693.jpg" alt="Alice to Zouroku 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Alice to Zouroku 6</p>
-                        <div class="articulo-texto">Episodio 6 de Alice to Zouroku</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2722.jpg" alt="Uchouten Kazoku 2 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Uchouten Kazoku 2 6</p>
-                        <div class="articulo-texto">Episodio 6 de Uchouten Kazoku 2</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/7.jpg" alt="One Piece 788"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">One Piece 788</p>
-                        <div class="articulo-texto">Episodio 788 de One Piece</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2096.jpg" alt="Dragon Ball Super 90"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Dragon Ball Super 90</p>
-                        <div class="articulo-texto">Episodio 90 de Dragon Ball Super</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2553.jpg" alt="Tiger Mask W 31"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Tiger Mask W 31</p>
-                        <div class="articulo-texto">Episodio 31 de Tiger Mask W</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2717.jpg" alt="Kyoukai no Rinne (TV) 3rd Season 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Kyoukai no Rinne (TV) 3rd Season 6</p>
-                        <div class="articulo-texto">Episodio 6 de Kyoukai no Rinne (TV) 3rd Season</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2721.jpg" alt="Eromanga-sensei 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Eromanga-sensei 6</p>
-                        <div class="articulo-texto">Episodio 6 de Eromanga-sensei</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2720.jpg" alt="Re:Creators 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Re:Creators 6</p>
-                        <div class="articulo-texto">Episodio 6 de Re:Creators</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2691.jpg" alt="Granblue Fantasy The Animation TV 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Granblue Fantasy The Animation TV 7</p>
-                        <div class="articulo-texto">Episodio 7 de Granblue Fantasy The Animation TV</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2690.jpg" alt="Shingeki no Kyojin Season 2 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Shingeki no Kyojin Season 2 7</p>
-                        <div class="articulo-texto">Episodio 7 de Shingeki no Kyojin Season 2</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2689.jpg" alt="Gin no Guardian 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Gin no Guardian 7</p>
-                        <div class="articulo-texto">Episodio 7 de Gin no Guardian</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2688.jpg" alt="Boku no Hero Academia 2nd Season 7"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Boku no Hero Academia 2nd Season 7</p>
-                        <div class="articulo-texto">Episodio 7 de Boku no Hero Academia 2nd Season</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2719.jpg" alt="Shingeki no Bahamut: Virgin Soul 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Shingeki no Bahamut: Virgin Soul 6</p>
-                        <div class="articulo-texto">Episodio 6 de Shingeki no Bahamut: Virgin Soul</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2711.jpg" alt="Kabukibu! 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Kabukibu! 6</p>
-                        <div class="articulo-texto">Episodio 6 de Kabukibu!</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2732.jpg" alt="Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria 5"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria 5</p>
-                        <div class="articulo-texto">Episodio 5 de Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka Gaiden: Sword Oratoria</div>
-                    </div>
-                </div>
-                <div class="articulo col-12 col-12m col-12s" style=" display: inline-block">
-                    <div style=" display: inline-block;">
-                        <img class="articulo-imagen" src="http://animeflv.net/uploads/animes/covers/80x80/2716.jpg" alt="Nobunaga no Shinobi: Ise Kanegasaki-hen 6"></div>
-                    <div class="articulo-caja col-6">
-                        <p class="articulo-titulo">Nobunaga no Shinobi: Ise Kanegasaki-hen 6</p>
-                        <div class="articulo-texto">Episodio 6 de Nobunaga no Shinobi: Ise Kanegasaki-hen</div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <footer class="col-12 col-12m col-12s">
-            <div class="col-1 col-4m col-4s" id="footerlist">
-                <ul>
-                    <li>
-                        <a href="#facebook" target="_blank"><i style=" color: #3b5998" class="fa fa-facebook-square fa-fw" aria-hidden="true"></i>facebook</a>
-                    </li>
-                    <li>
-                        <a href="#twitter" target="_blank"><i style=" color: #1DA1F2" class="fa fa-twitter-square fa-fw" aria-hidden="true"></i>twitter</a>
-                    </li>
-                    <li>
-                        <a href="#steam" target="_blank"><i style=" color: #171a21" class="fa fa-steam-square fa-fw" aria-hidden="true"></i>steam</a>
-                    </li>
-                    <li>
-                        <a href="#youtube" target="_blank"><i style=" color: #cc181e" class="fa fa-youtube-play fa-fw" aria-hidden="true"></i>youtube</a>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+    <body onload="displayResult()">
+        <div id="principal" class="col-12 col-12m col-12s "></div>
     </body>
 </html>

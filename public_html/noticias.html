@@ -36,7 +36,7 @@
                 if (window.ActiveXObject || xhttp.responseType == "msxml-document")
                 {
                     ex = xml.transformNode(xsl);
-                    document.getElementById("example").innerHTML = ex;
+                    document.getElementById("principal").innerHTML = ex;
                 }
         // code for Chrome, Firefox, Opera, etc.
                 else if (document.implementation && document.implementation.createDocument)
@@ -98,9 +98,9 @@
                 padding: 8px;
                 text-decoration: none;
             }
-            .divRead{border-radius: 5px; background-color: green;float: left}
+            .divRead{border-radius: 20px; background-color: green;float: left}
             .divRead:hover{background-color: lightgreen;}
-            .articulo{ height: 245px;padding-left: 2%; padding-top: 20px;padding-bottom: 10px;border-bottom: solid 2px;}
+            .articulo{padding-left: 1%;padding-right: 1%; padding-top: 20px;padding-bottom: 10px;border-bottom: solid 2px;}
             .articulo-imagen{width: 110px;height: 156px;display: inline-block;}
             .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
             .articulo-titulo{ font-weight: bold; font-size: 18px; font-family: 'Rubik', sans-serif;}
