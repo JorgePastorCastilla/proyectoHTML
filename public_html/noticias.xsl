@@ -11,6 +11,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
     <xsl:strip-space elements="*"/>
+    <xsl:variable name='num_per_div' select='2' />
+
     <!-- TODO customize transformation rules 
          syntax recommendation http://www.w3.org/TR/xslt 
     -->
@@ -66,40 +68,7 @@
         </header>
         <main id="mainid" class="col-12 col-12m col-12s">
             <div style="display: inline-block;">
-                <xsl:for-each select="rss/channel/item">
-                    <div class="articulo col-5 col-12m col-12s" style=" display: inline-block;">
-                        <div style=" display: inline-block;">
-                            <img class="articulo-imagen">
-                                <xsl:attribute name="src">
-                                    <xsl:value-of select="*[local-name() = 'thumbnail']"/>
-                                </xsl:attribute> 
-                                <xsl:attribute name="alt">
-                                    <xsl:value-of select="title"/>
-                                </xsl:attribute>
-                            </img>
-                        </div>
-                        <div class="articulo-caja">
-                            <p class="articulo-titulo">
-                                <xsl:value-of select="title"/>
-                            </p>
-                            <div class="articulo-texto">
-                                <xsl:value-of select="description"/>
-                            </div>
-                            <div class="divRead col-2 col-12s">
-                                <a class="botonRead">
-                                    <xsl:attribute name="href">
-                                        <xsl:value-of select="link"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="target">
-                                        _blank
-                                    </xsl:attribute>
-                                    <xsl:text>Read more</xsl:text>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </xsl:for-each>
+                <xsl:apply-templates select='rss/channel/item' mode='container' />
             </div>
         </main>
         <footer class="col-12 col-12m col-12s">
@@ -125,5 +94,46 @@
             </div>
         </footer>
     </xsl:template>
-
+    
+    <xsl:template match="item">
+        <div class="articulo col-5 col-12m col-12s" style=" display: inline-block;">
+            <div style=" display: inline-block;">
+                <img class="articulo-imagen">
+                    <xsl:attribute name="src">
+                        <xsl:value-of select="*[local-name() = 'thumbnail']"/>
+                    </xsl:attribute> 
+                    <xsl:attribute name="alt">
+                        <xsl:value-of select="title"/>
+                    </xsl:attribute>
+                </img>
+            </div>
+            <div class="articulo-caja">
+                <p class="articulo-titulo">
+                    <xsl:value-of select="title"/>
+                </p>
+                <div class="articulo-texto">
+                    <xsl:value-of select="description"/>
+                </div>
+                <div class="divRead col-2 col-12s">
+                    <a class="botonRead">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="link"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="target">
+                            _blank
+                        </xsl:attribute>
+                        <xsl:text>Read more</xsl:text>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </xsl:template>
+    <xsl:template match='item' mode='container'>
+        <xsl:if test='position() = 1 or not((position()-1) mod $num_per_div)'>
+            <div style="border-bottom: 2px solid black;">
+                <xsl:variable name='pos' select='position()' />
+                <xsl:apply-templates select='. | following-sibling::*[count(preceding-sibling::item) &lt; $pos+(number($num_per_div)-1)]' />
+            </div>
+        </xsl:if>
+    </xsl:template>
 </xsl:stylesheet>

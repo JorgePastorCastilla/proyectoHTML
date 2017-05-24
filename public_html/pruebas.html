@@ -6,7 +6,7 @@
         <link href="https://fonts.googleapis.com/css?family=Noticia+Text" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
-        <title>Noticias</title>
+        <title>PRUEBAZAS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script>
@@ -31,7 +31,7 @@
             function displayResult()
             {
                 xml = loadXMLDoc("news.xml");
-                xsl = loadXMLDoc("noticias.xsl");
+                xsl = loadXMLDoc("traducir-rss.xsl");
         // code for IE
                 if (window.ActiveXObject || xhttp.responseType == "msxml-document")
                 {
@@ -100,7 +100,7 @@
             }
             .divRead{border-radius: 20px; background-color: green;float: left}
             .divRead:hover{background-color: lightgreen;}
-            .articulo{padding-left: 1%;padding-right: 1%; padding-top: 20px;padding-bottom: 10px;}
+            .articulo{padding-left: 1%;padding-right: 1%; padding-top: 20px;padding-bottom: 10px;border-bottom: solid 0px;}
             .articulo-imagen{width: 110px;height: 156px;display: inline-block;}
             .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
             .articulo-titulo{ font-weight: bold; font-size: 18px; font-family: 'Rubik', sans-serif;}
