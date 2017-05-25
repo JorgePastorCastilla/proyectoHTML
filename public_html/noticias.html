@@ -32,13 +32,13 @@
             {
                 xml = loadXMLDoc("news.xml");
                 xsl = loadXMLDoc("noticias.xsl");
-        // code for IE
+                // code for IE
                 if (window.ActiveXObject || xhttp.responseType == "msxml-document")
                 {
                     ex = xml.transformNode(xsl);
                     document.getElementById("principal").innerHTML = ex;
                 }
-        // code for Chrome, Firefox, Opera, etc.
+                // code for Chrome, Firefox, Opera, etc.
                 else if (document.implementation && document.implementation.createDocument)
                 {
                     xsltProcessor = new XSLTProcessor();
@@ -69,7 +69,7 @@
                 padding: 16px;
                 text-decoration: none;
             }
-            
+
 
             header{position: fixed;}
 
@@ -93,13 +93,15 @@
                 display: inline-block;vertical-align: top;
             }
             .botonRead{display: block;
-                color: white;
-                text-align: center;
-                padding: 8px;
-                text-decoration: none;
+                       color: white;
+                       text-align: center;
+                       padding: 8px;
+                       text-decoration: none;
             }
-            .divRead{border-radius: 20px; background-color: green;float: left}
+            .divRead{border-radius: 20px; background-color: green;float: left;}
             .divRead:hover{background-color: lightgreen;}
+            .contenedor-articulos{border-bottom: 2px solid black;}
+            .contenedor-imagen{display: inline-block;}
             .articulo{padding-left: 1%;padding-right: 1%; padding-top: 20px;padding-bottom: 10px;}
             .articulo-imagen{width: 110px;height: 156px;display: inline-block;}
             .articulo-caja{margin-left: 1%;vertical-align: top;display: inline-block;}
@@ -140,7 +142,9 @@
                 .col-12m {width: 100%;}
                 .video {width: 100%;}
                 #mainid{padding-top: 56px;}
-                .articulo{height: auto;}
+                .articulo{border-bottom: 2px solid black;;}
+                .contenedor-articulos{border-bottom: 0px solid black;}
+
 
             }
 
@@ -160,7 +164,7 @@
                 .col-12s {width: 100%;}
                 .video {width: 100%;}
                 .articulo{height: auto;}
-
+                .contenedor-imagen{padding-left: 40%;}
                 #listaMovil li>a{
                     background-color: #3e87f4;
                     display: block;

@@ -97,7 +97,7 @@
     
     <xsl:template match="item">
         <div class="articulo col-5 col-12m col-12s" style=" display: inline-block;">
-            <div style=" display: inline-block;">
+            <div class="contenedor-imagen">
                 <img class="articulo-imagen">
                     <xsl:attribute name="src">
                         <xsl:value-of select="*[local-name() = 'thumbnail']"/>
@@ -130,7 +130,7 @@
     </xsl:template>
     <xsl:template match='item' mode='container'>
         <xsl:if test='position() = 1 or not((position()-1) mod $num_per_div)'>
-            <div style="border-bottom: 2px solid black;">
+            <div class="contenedor-articulos">
                 <xsl:variable name='pos' select='position()' />
                 <xsl:apply-templates select='. | following-sibling::*[count(preceding-sibling::item) &lt; $pos+(number($num_per_div)-1)]' />
             </div>
