@@ -66,8 +66,8 @@
                 </header>
                 <main id="mainid" class="col-12 col-12m col-12s">               
                     <xsl:for-each select="rss/channel/item">
-                        <div class="articulo col-4 col-12m col-12s" style=" display: inline-block">
-                            <div style=" display: inline-block;">
+                        <div class="articulo col-3 col-6m col-12s" style=" display: inline-block">
+                            <div class="contenedor-imagen">
                             <img class="articulo-imagen">
                                 <xsl:attribute name="src">
                                     <xsl:value-of select="image"/>
@@ -75,7 +75,8 @@
                                 <xsl:attribute name="alt">
                                     <xsl:value-of select="title"/>
                                 </xsl:attribute>
-                            </img></div><div class="articulo-caja col-6">
+                            </img></div>
+                            <div class="articulo-caja col-6">
                                 <p class="articulo-titulo">
                                     <xsl:value-of select="title"/>
                                 </p>

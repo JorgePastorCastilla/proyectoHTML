@@ -67,7 +67,7 @@
             </nav>
         </header>
         <main id="mainid" class="col-12 col-12m col-12s">
-            <div style="display: inline-block;">
+            <div style="col-12">
                 <xsl:apply-templates select='rss/channel/item' mode='container' />
             </div>
         </main>
@@ -96,7 +96,7 @@
     </xsl:template>
     
     <xsl:template match="item">
-        <div class="articulo col-5 col-12m col-12s" style=" display: inline-block;">
+        <div class="articulo col-6 col-12m col-12s" style=" display: inline-block;">
             <div class="contenedor-imagen">
                 <img class="articulo-imagen">
                     <xsl:attribute name="src">

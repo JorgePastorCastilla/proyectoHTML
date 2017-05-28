@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<opml version="1.0">
+    <head>
+        <title>jordi subscriptions in feedly Cloud</title>
+    </head>
+    <body>
+        <outline text="Manga" title="Manga">
+            <outline type="rss" text="News - MyAnimeList" title="News - MyAnimeList" xmlUrl="http://myanimelist.net/rss.php?type=news" htmlUrl="https://myanimelist.net/news?_location=rss"/>
+            <outline type="rss" text="Anime Online - AnimeFLV" title="Anime Online - AnimeFLV" xmlUrl="http://feeds.feedburner.com/AnimeFLV" htmlUrl="http://animeflv.net"/>
+            <outline type="rss" text="Latest Manga Releases" title="Latest Manga Releases" xmlUrl="http://mangapark.me/rss/latest.xml" htmlUrl="http://mangapark.me/latest"/>
+        </outline>
+        <outline text="Anime" title="Anime">
+            <outline type="rss" text="Anime News Network - News" title="Anime News Network - News" xmlUrl="http://www.animenewsnetwork.com/newsfeed/rss.xml" htmlUrl="http://www.animenewsnetwork.com/news/"/>
+        </outline>
+        <outline text="jojo" title="jojo">
+            <outline type="rss" text="ジョジョ速" title="ジョジョ速" xmlUrl="http://blog.livedoor.jp/jyojyo_soku/index.rdf" htmlUrl="http://jojosoku.com"/>
+            <outline type="rss" text="MangaLand" title="MangaLand" xmlUrl="http://feeds.feedburner.com/Mangaland" htmlUrl="http://www.mangaland.es"/>
+            <outline type="rss" text="Featured Articles - MyAnimeList" title="Featured Articles - MyAnimeList" xmlUrl="http://myanimelist.net/rss.php?type=featured" htmlUrl="https://myanimelist.net/featured?_location=rss"/>
+        </outline>
+    </body>
+</opml>
+
