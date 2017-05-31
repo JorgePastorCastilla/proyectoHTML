@@ -30,7 +30,7 @@
 
             function displayResult()
             {
-                xml = loadXMLDoc("anime-releases.xml");
+                xml = loadXMLDoc("Anime Online - AnimeFLV - powered by FeedBurner.xml");
                 xsl = loadXMLDoc("anime-releases.xsl");
 // code for IE
                 if (window.ActiveXObject || xhttp.responseType == "msxml-document")
@@ -92,6 +92,8 @@
                 display: inline-block;vertical-align: top;
             }
             #mainid{margin-left: 12.5%;}
+            .link{text-decoration: none;color: black;}
+            .link:hover{background-color:#e5e5e5}
             .articulo{ padding-left: 1%;padding-right: 1%; padding-top: 20px;padding-bottom: 10px;border-bottom: solid 0px;}
             .contenedor-imagen{display:block;text-align: center;margin-left: auto;margin-right: auto;}
             .articulo-imagen{width: 120px;height: 120px;}
