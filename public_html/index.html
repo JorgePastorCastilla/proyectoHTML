@@ -65,6 +65,7 @@ utilitza HTML5
             [class*="col-"]{
                 display: inline-block;vertical-align: top;
             }
+            p{font-size: 19px;}
 
             @media only screen and (min-width: 851px) {
                 .col-0 {width: 0%}
@@ -82,6 +83,7 @@ utilitza HTML5
                 .col-12 {width: 100%;}
                 .video {width: 600px;height: 300px}
                 #mainid{padding-top: 56px;}
+                #video{height:360px;margin-left: 12.5%;margin-right: 12.5%;}
             }     
 
             @media only screen and (max-width: 850px) {
@@ -98,9 +100,8 @@ utilitza HTML5
                 .col-10m {width: 83.33%;}
                 .col-11m {width: 91.66%;}
                 .col-12m {width: 100%;}
-                .video {width: 100%;}
                 #mainid{padding-top: 56px;}
-
+                #video{height:360px;}
             }
 
             @media only screen and (max-width: 600px) {
@@ -117,8 +118,7 @@ utilitza HTML5
                 .col-10s {width: 83.33%;}
                 .col-11s {width: 91.66%;}
                 .col-12s {width: 100%;}
-                .video {width: 100%;}
-
+                #video{height:360px;}
                 #listaMovil li>a{
                     background-color: #3e87f4;
                     display: block;
@@ -130,7 +130,7 @@ utilitza HTML5
                 #listaMovil>li{float: left;text-align: center;}
                 #listaMovil>li>ul{display: none;}
                 #listaMovil>li:hover>ul{display: block;}
-                
+
             }
 
         </style>
@@ -159,7 +159,30 @@ utilitza HTML5
                 </ul></nav>
         </header>
         <main id="mainid" >
-         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2351.9773681271167!2d2.9039420219622003!3d39.712966777221624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1496041184578" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>        </main>
+            <div class="col-12 col-12m col-12s" style="margin-bottom: 50px;">
+                <h2>Anime</h2>
+                <p>
+                    En la sección de anime encontrarás los últimos capítulos que se han emitido.
+                </p>
+                <h2>Noticias</h2>
+                <p>
+                    En la sección de noticias están las noticias más recientes que se han publicado sobre manga y anime. 
+                </p>
+                <h2>Contacto</h2>
+                <p>
+                    Si quieres contactarnos rellena el formulario de la sección Contacto.
+                </p>
+            </div>
+
+            <div class="col-6 col-6m col-12s" style=" display: inline-block;">
+                <iframe id="video" src="https://www.youtube.com/embed/35zO4Y1UpsQ?ecver=2&controls=0&autoplay=0" frameborder="0" 
+                        style="" class="col-9 col-12m col-12s" allowfullscreen ></iframe>
+            </div><!--
+            --><div class="col-6 col-6m col-12s" style=" display: inline-block;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2351.9773681271167!2d2.9039420219622003!3d39.712966777221624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1496041184578"
+                        width="600" height="450" frameborder="0" style="border:0" allowfullscreen class="col-12 col-12m col-12s"></iframe>
+            </div>
+        </main>
         <footer class="col-12 col-12m col-12s">
             <div class="col-1 col-4m col-4s" id="footerlist">
                 <ul>

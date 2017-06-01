@@ -87,7 +87,7 @@
                                 </xsl:attribute>
                             </img>
                         </div>
-                        <div class="articulo-caja col-12">
+                        <div class="articulo-caja col-12 col-12m col-12s">
                             <p class="articulo-titulo">
                                 <xsl:value-of select="title"/>
                             </p>
@@ -95,8 +95,7 @@
                     </xsl:element>
                 </div>
             </xsl:for-each>
-        </main>
-                
+        </main>  
         <footer class="col-12 col-12m col-12s">
             <div class="col-1 col-4m col-4s" id="footerlist">
                 <ul>
